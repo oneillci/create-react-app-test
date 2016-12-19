@@ -31,6 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{this.state.txt} - {this.state.age}</h1>
+        <Button>This is the children slot - <Heart /></Button>
         <Widget update={this.update.bind(this)}/>
         <Widget update={this.update.bind(this)}/>
         <Widget update={this.update.bind(this)}/>
@@ -39,7 +40,9 @@ class App extends Component {
   }
 }
 
-const Widget = (props) => 
-  <input type="text" onChange={props.update} />;
+const Widget = (props) => <input type="text" onChange={props.update} />;
+
+const Button = props => <button>{props.children}</button>;
+const Heart = () => <span>&hearts;</span>
 
 export default App;
