@@ -45,4 +45,11 @@ const Widget = (props) => <input type="text" onChange={props.update} />;
 const Button = props => <button>{props.children}</button>;
 const Heart = () => <span>&hearts;</span>
 
+App.propTypes = {    
+    age (props, propName, component) {
+      if (!(propName in props)) return new Error(`missing ${propName}`);
+      if (props["age"] < 18) return new Error(`age must be > 18, ${props['age']} supplied`);
+    }
+};
+
 export default App;
