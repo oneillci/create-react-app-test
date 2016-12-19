@@ -2,12 +2,23 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 
-const App = () => <h1>Hi</h1>
+const App = ({txt, age}) => <div>
+    <h1>{txt}</h1><p>Age: {age}</p></div>;
 
-// class App extends Component {
+App.propTypes = {
+    txt: React.PropTypes.string,
+    age: React.PropTypes.number.isRequired
+};
+
+App.defaultProps = {
+    txt: "default text, overridden by props"
+}
+
+// class App extends Component {    
 //   render() {
+    //let txt = this.props.txt;
 //     return (
-//       <div className="App">
+//       <div className="App">{txt}
 //         <div className="App-header">
 //           <img src={logo} className="App-logo" alt="logo" />
 //           <h2>Welcome to React</h2>

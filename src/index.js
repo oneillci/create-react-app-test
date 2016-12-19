@@ -4,6 +4,6 @@ import App from './App';
 //import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <App age={36} txt="this is props text" />,
   document.getElementById('root')
 );
